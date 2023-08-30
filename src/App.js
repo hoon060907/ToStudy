@@ -7,6 +7,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { auth } from './firebase';
 import StudyDiary from './components/StudyDiary';
 import WriteDiary from './components/WriteDiary';
+import TimeTable from './components/TimeTable';
 
 function App() {
   const [isLoggedin, setIsLoggedIn] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       <Route path='/tostudy' element={isLoggedin ? <StudyListPage /> : <Navigate to="/" />} />
       <Route path='/studydiary' element={isLoggedin ? <StudyDiary /> : <Navigate to="/" />} />
       <Route path='/writediary' element={isLoggedin ? <WriteDiary /> : <Navigate to="/" />} />
+      <Route path='/timetable' element={isLoggedin ? <TimeTable/>: <Navigate to="/"/>}/>
       {/* <Route path='/tostudy' element={auth.currentUser ? <StudyListPage /> : <Navigate to="/login" />} /> */}
     </Routes>
   );

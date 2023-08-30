@@ -13,7 +13,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background: #2b2b2b;
+        background: #F3DAD1;
         .title {
             color: #53d129;
             height: 100%;
@@ -31,12 +31,12 @@
             height: 100%;
             display: flex;
             align-items: center;
-            .loginsignup {
+            .nav {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                width: 170px;
+                width: 270px;
                 height: 100%;
                 .inner {
                     height: 30px;
@@ -110,6 +110,68 @@
                 border-color: #2b2b2b;
                 color: #2b2b2b;
             }
+        }
+        .damagochiWindow{
+            width: 900px;
+            height: 800px;
+            background-color: #fff;
+            border: 3px solid  rgba(128, 128, 128, 0.403);
+            border-radius: 25px;
+            position: absolute;
+            left: 10px;
+            margin: 2.5%;
+        }
+        .todoContainer{
+            width: 730px;
+            height: 85%;
+            background-color: #fff;
+            position: absolute;
+            right: 30px;
+            margin: 2.5%;
+            .dagym{
+                width: 730px;
+                height: 65px;
+                background-color: #fff;
+                border: 3px solid rgba(128, 128, 128, 0.546);
+                margin-bottom: 20px;
+                border-radius: 15px;
+            }
+            .todo{
+                display: flex;
+                margin: 0;
+                border-radius: 15px;
+                width: 735px;
+                .color{
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 15px;
+                    background-color: #fff;
+                    border: 3px solid rgba(128, 128, 128, 0.546);
+                    
+                }
+                .list{
+                    width: 650px;
+                    height: 65px;
+                    border-radius: 15px;
+                    background-color: #fff;
+                    margin-left: 20px;
+                    border: 3px solid rgba(128, 128, 128, 0.546);
+                }  
+            }
+            .todoInsert{
+                width: 730px;
+                height: 65px;
+                border-radius: 15px;
+                background-color: #fff;
+                margin-top: 10px;
+                font-size: 50px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                border: 3px solid rgba(128, 128, 128, 0.546);
+               
+            }
+            
         }
         // .linkwhenNoUser {
         //     cursor: pointer;

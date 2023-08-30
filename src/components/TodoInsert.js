@@ -21,7 +21,7 @@ const TodoInsert = ({ onInsert }) => {
     return (
         <form className='TodoInsert' onSubmit={onSubmit}>
             <input
-                placeholder='과제 입력'
+                placeholder='오늘 할 일을 입력하세요'
                 value={value}
                 onChange={onChange}
             />
