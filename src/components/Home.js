@@ -46,6 +46,7 @@ const Home = ({ setIsLoggedIn }) => {
         <div className="title">
           <img src={logo} />
         </div>
+
         {/* 내비게이션바 */}
         <Link to="/" className="nav">
           <img src={home} />
