@@ -12,11 +12,7 @@ import home from "../img/home.png";
 import timetable from "../img/timetable.png";
 import diary from "../img/diary.png";
 import user from "../img/user.png";
-import setting from "../img/settings.png";
 
-const onClick = () => {
-  alert("로그인하세요!");
-};
 
 const StudyDiary = () => {
   const [diaryList, setDiaryList] = useState([]);

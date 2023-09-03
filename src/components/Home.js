@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Home.scss";
 import { CiMemoPad } from "react-icons/ci";
 import { PiNotePencil } from "react-icons/pi";
@@ -10,8 +10,6 @@ import home from "../img/home.png";
 import timetable from "../img/timetable.png";
 import diary from "../img/diary.png";
 import user from "../img/user.png";
-import setting from "../img/settings.png";
-import bckg from "../img/tamagobackground.png";
 import { AiOutlineHome, AiOutlineClockCircle } from "react-icons/ai";
 import { PiPencilSimpleLineDuotone } from "react-icons/pi";
 import { AiOutlineUser } from "react-icons/ai";
@@ -39,6 +37,18 @@ const Home = ({ setIsLoggedIn }) => {
     alert("로그인하세요!");
   };
 
+  var nav = document.querySelectorAll('.nav');
+
+  function clickNavHandler() {
+    for (var i=0; i<nav.length; i++){
+      nav[i].classList.remove('nav-active');
+    }
+    this.classList.add('nav-active');
+  }
+  for (var i=0; i<nav.length; i++){
+    nav[i].addEventListener('click', clickNavHandler);
+  }
+
   return (
     <div className="homebody">
       <div className="header">
@@ -48,28 +58,54 @@ const Home = ({ setIsLoggedIn }) => {
         </div>
 
         {/* 내비게이션바 */}
-        <Link to="/" className="nav">
-          <img src={home} />
-        </Link>
-        <div className="nav">
-          <img src={timetable} />
-        </div>
-        {auth.currentUser ? (
-          <Link to="/studydiary" className="nav">
-            <img src={diary} />
+        <div className="navbar">
+          {/* 홈 */}
+          <Link to="/" className="nav">
+            <img src={home} />
           </Link>
-        ) : (
-          <span onClick={onClick} className="nav">
+          {/* 타임테이블 */}
+          {/* <div className="nav">
+            <img src={timetable} />
+          </div> */}
+          {auth.currentUser ? (
+            <Link to="/timetable" className="nav">
+              <img src={timetable} />
+            </Link>
+          ) : (
+            <div onClick={onClick} className="nav">
+              <img src={timetable} />
+            </div> 
+          )}
+          {/* 다이어리 */}
+          {/* <div className="nav">
             <img src={diary} />
-          </span>
-        )}
-        <div className="nav">
-          <img src={user} />
+          </div> */}
+          {auth.currentUser ? (
+            <Link to="/studydiary" className="nav">
+              <img src={diary} />
+            </Link>
+          ) : (
+            <div onClick={onClick} className="nav">
+              <img src={diary} />
+            </div>
+          )}
+          {/* 프로필 */}
+          {/* <div className="nav">
+            <img src={user} />
+          </div> */}
+          {auth.currentUser ? (
+            <Link to="/profile" className="nav">
+              <img src={user} />
+            </Link>
+          ) : (
+            <div onClick={onClick} className="nav">
+              <img src={user} />
+            </div>
+          )}
         </div>
-        <div className="nav">
-          <img src={setting} />
-        </div>
-        {/* <h1 className="title">공100<BsPencil /></h1> */}
+        
+        
+        {/* 로그아웃, 로그인, 회원가입 */}
         <div className="right">
           {auth.currentUser ? (
             <div onClick={logOut} className="logout">
@@ -88,9 +124,11 @@ const Home = ({ setIsLoggedIn }) => {
         </div>
       </div>
       <div className="main">
+        {/* 다마고치 화면 */}
         <div className="damagochiWindow">
           <div className="damagochi"></div>
         </div>
+        {/* 투두리스트 */}
         <div className="todoContainer">
           <div className="dagym"></div>
           <div className="todo">

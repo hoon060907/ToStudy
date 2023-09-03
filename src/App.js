@@ -8,6 +8,7 @@ import { auth } from "./firebase";
 import StudyDiary from "./components/StudyDiary";
 import WriteDiary from "./components/WriteDiary";
 import TimeTable from "./components/TimeTable";
+import Profile from "./components/Profile";
 
 function App() {
   const [isLoggedin, setIsLoggedIn] = useState(false);
@@ -16,26 +17,23 @@ function App() {
   });
   return (
     <Routes>
+
+
       <Route index element={<Home setIsLoggedIn={setIsLoggedIn} />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route
-        path="/tostudy"
-        element={isLoggedin ? <StudyListPage /> : <Navigate to="/" />}
-      />
-      <Route
-        path="/studydiary"
-        element={isLoggedin ? <StudyDiary /> : <Navigate to="/" />}
-      />
-      <Route
-        path="/writediary"
-        element={isLoggedin ? <WriteDiary /> : <Navigate to="/" />}
-      />
-      <Route
-        path="/timetable"
-        element={isLoggedin ? <TimeTable /> : <Navigate to="/" />}
-      />
-      {/* <Route path='/tostudy' element={auth.currentUser ? <StudyListPage /> : <Navigate to="/login" />} /> */}
+      {/* 다이어리작성 */}
+      <Route path="/writediary" element={isLoggedin ? <WriteDiary /> : <Navigate to="/" />} />
+        {/* 투두리스트 */}
+        <Route path="/tostudy" element={isLoggedin ? <StudyListPage /> : <Navigate to="/" />} />
+        {/* 다이어리 */}
+        <Route path="/studydiary" element={isLoggedin ? <StudyDiary /> : <Navigate to="/" />} />
+        
+        {/* 타임테이블 */}
+        <Route path="/timetable" element={isLoggedin ? <TimeTable /> : <Navigate to="/" />} />
+        {/* 프로필 */}
+        <Route path="/profile" element={isLoggedin ? <Profile /> : <Navigate to="/" />} />
+      
     </Routes>
   );
 }

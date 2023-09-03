@@ -40,19 +40,28 @@
       display: flex;
       align-items: center;
       padding-left: 50px;
-      // font-size: 65px;
-      // font-family: 'Dongle', sans-serif;
       &:hover {
         cursor: default;
       }
     }
-    .nav {
-      color: #e38f9f;
-      height: 100%;
+    .navbar {
       display: flex;
-      align-items: center;
-      margin-left: -1000px;
+      align-items: stretch;
+      width: 90%;
+      
     }
+
+    .nav {
+      padding-left: 40px;
+    }
+    .nav-active{
+      filter: brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(1347%) hue-rotate(67deg) brightness(84%) contrast(83%);
+    }
+    .nav:hover{
+      filter: brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(1347%) hue-rotate(67deg) brightness(84%) contrast(83%);
+
+    }
+
     .right {
       padding-right: 50px;
       height: 100%;
