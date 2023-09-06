@@ -9,6 +9,9 @@ const Signup = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [birth, setBirth] = useState('');
+    const [tell, setTell] = useState('');
 
     const onChangeEmail = e => {
         setEmail(e.target.value);
@@ -17,6 +20,15 @@ const Signup = () => {
     const onChangePw = e => {
         setPassword(e.target.value);
     };
+    const onChangeNm = e => {
+        setName(e.target.value);
+    };
+    const onChangeBth = e => {
+        setBirth(e.target.value);
+    };
+    const onChangeT = e =>{
+        setTell(e.target.value);
+    }
 
     const register = async () => {
         try {
@@ -27,7 +39,10 @@ const Signup = () => {
                 [CreatedUser.user.uid]: {
                     useremail: useremail,
                     todos: ["empty"],
-                    diaries: ["empty"]
+                    diaries: ["empty"],
+                    name,
+                    birth,
+                    tell
                 }
             };
             update(usersRef, newUser);
@@ -60,6 +75,18 @@ const Signup = () => {
                 <div className="innerbox">
                     <p className="text">password</p>
                     <input className="input" type="password" onChange={onChangePw} />
+                </div>
+                <div className="innerbox">
+                    <p className="text">name</p>
+                    <input className="input" type="text" onChange={onChangeNm} />
+                </div>
+                <div className="innerbox">
+                    <p className="text">birth</p>
+                    <input className="input" type="text" onChange={onChangeBth} />
+                </div>
+                <div className="innerbox">
+                    <p className="text">Tell</p>
+                    <input className="input" type="text" onChange={onChangeT} />
                 </div>
                 <button onClick={register} className="btn">Sign Up</button>
             </div>
