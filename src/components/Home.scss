@@ -44,5 +44,8 @@
     }
     .imagebox {
         text-align: center;
+        img {
+            height: 0px;
+        }
     }
 }
