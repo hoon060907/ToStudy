@@ -6,6 +6,7 @@ import { ref, set, onValue } from "firebase/database";
 import { auth, db } from "../firebase";
 import './StudyListPage.scss';
 import Tamagochi from "./Tamagochi";
+import Swal from "sweetalert2";
 
 const StudyListPage = () => {
   // const [,updateState] = useState();
@@ -59,6 +60,15 @@ const StudyListPage = () => {
           todo.id === id ? { ...todo, checked: true } : todo
       ),
     );
+    if(level%10==0 && level<=60){
+      Swal.fire({
+        showConfirmButton: false,
+        imageUrl: `images/${level/10+1}.png`,
+        title: '다마고치 성장',
+        timer: 5000,
+        background: 'linear-gradient(#E38F9F, #F5BFBD)'
+      })
+    }
   }
   const levelUp = () => {
     set(ref(db, `users/${auth.currentUser.uid}/lv`), level+1);

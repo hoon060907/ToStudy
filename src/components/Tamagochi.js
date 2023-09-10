@@ -1,6 +1,6 @@
 const Tamagochi = ({ level }) => {
     if(level > 60){
-        return <img src="images/7.png" style={{ height: `${150 + 5*(level-1)}px` }} />;
+        return <img src="images/7.png" style={{ height: '450px' }} />;
     }
     else if(level > 50){
         return <img src="images/6.png" style={{ height: `${150 + 5*(level-1)}px` }} />;
