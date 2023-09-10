@@ -9,7 +9,7 @@
         padding: 0;
         margin: 10px;
         .diary {
-            border-top: 30px solid #b33d52;
+            border-top: 30px solid #d4568b;
             border-left: none;
             border-right: none;
             border-bottom: none;
@@ -43,7 +43,6 @@
         }
         &:nth-child(even) {
             .diary {
-                border-top: 30px solid #df8394;
                 background: linear-gradient(#F5BFBD, #EEF4E6);
             }
         }
