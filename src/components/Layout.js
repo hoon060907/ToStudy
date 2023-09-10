@@ -6,6 +6,7 @@ import { CiMemoPad } from 'react-icons/ci';
 import { PiNotePencil } from 'react-icons/pi';
 import { BsPencil } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
+import Swal from "sweetalert2";
 
 const Layout = ({ setIsLoggedIn }) => {
     const navigate = useNavigate();
@@ -27,7 +28,10 @@ const Layout = ({ setIsLoggedIn }) => {
     }, []);
 
     const onClick = () => {
-        alert('로그인하세요!');
+        Swal.fire({
+            title: '로그인하세요!',
+            background: 'linear-gradient(#F5BFBD, #EEF4E6)'
+        });
     };
 
     return (

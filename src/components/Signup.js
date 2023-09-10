@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, update } from "firebase/database";
 import './Login.scss';
+import Swal from "sweetalert2";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -47,15 +48,32 @@ const Signup = () => {
         } catch (e) {
             switch (e.code) {
                 case 'auth/weak-password':
-                    alert('비밀번호는 6자리 이상이어야 합니다');
+                    Swal.fire({
+                        title: '비밀번호는 6자리 이상이어야 합니다',
+                        background: 'linear-gradient(#F5BFBD, #EEF4E6)',
+                        position: 'top'
+                    });
                     break;
                 case 'auth/invalid-email':
-                    alert('잘못된 이메일 주소입니다');
+                    Swal.fire({
+                        title: '잘못된 이메일 주소입니다',
+                        background: 'linear-gradient(#F5BFBD, #EEF4E6)',
+                        position: 'top'
+                    });
                     break;
                 case 'auth/email-already-in-use':
-                    alert('이미 가입되어 있는 계정입니다');
+                    Swal.fire({
+                        title: '이미 가입되어 있는 계정입니다',
+                        background: 'linear-gradient(#F5BFBD, #EEF4E6)',
+                        position: 'top'
+                    });
                     break;
-                default: alert("오류가 발생하였습니다.");
+                default:
+                    Swal.fire({
+                        title: '다시 입력해주세요.',
+                        background: 'linear-gradient(#F5BFBD, #EEF4E6)',
+                        position: 'top'
+                    });
             }
         }
     }

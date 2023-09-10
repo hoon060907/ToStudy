@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import './Login.scss';
+import Swal from "sweetalert2";
 
 const Login = () => {
     const navigate = useNavigate('/');
@@ -39,7 +40,11 @@ const Login = () => {
             console.log((await curUserInfo).user);
             navigate('/');
         } catch (e) {
-            alert("로그인 할 수 없습니다.");
+            Swal.fire({
+                title: '로그인할 수 없습니다.',
+                background: 'linear-gradient(#F5BFBD, #EEF4E6)',
+                position: 'top'
+            });
         }
     }
 
