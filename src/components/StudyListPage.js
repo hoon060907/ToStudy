@@ -60,11 +60,13 @@ const StudyListPage = () => {
           todo.id === id ? { ...todo, checked: true } : todo
       ),
     );
+    
     if(level%10==0 && level<=60){
       Swal.fire({
         showConfirmButton: false,
         imageUrl: `images/${level/10+1}.png`,
         title: '다마고치 성장',
+        text: `lv.${level+1}`,
         timer: 5000,
         background: 'linear-gradient(#E38F9F, #F5BFBD)'
       })
