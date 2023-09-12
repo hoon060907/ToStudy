@@ -29,8 +29,24 @@
                 font-size: 65px;
                 font-family: 'Dongle', sans-serif;
                 cursor: pointer;
+                .bsegg {
+                    font-size: 75px;
+                }
+                .pencil {
+                    font-size: 45px;
+                    position: relative;
+                    left: -40px;
+                }
                 @include media('<826px') {
                     font-size: 40px;
+                    .bsegg {
+                        font-size: 45px;
+                    }
+                    .pencil {
+                        font-size: 25px;
+                        left: -25px;
+                        top: -3px;
+                    }
                 }
                 @include media('<700px') {
                     span {

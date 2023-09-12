@@ -6,6 +6,8 @@ import { CiMemoPad } from 'react-icons/ci';
 import { PiNotePencil } from 'react-icons/pi';
 import { BsPencil } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
+import { BsEgg } from "react-icons/bs";
+import { BsPencilFill } from "react-icons/bs";
 import Swal from "sweetalert2";
 
 const Layout = ({ setIsLoggedIn }) => {
@@ -38,7 +40,7 @@ const Layout = ({ setIsLoggedIn }) => {
         <div className="body">
             <div className="header">
                 <div className="left">
-                    <h3 className="title" onClick={() => {navigate('/');}}><span>다마고치 벤쿄</span><BsPencil /></h3>
+                    <h3 className="title" onClick={() => {navigate('/');}}><span>다마고치 벤쿄</span><BsEgg className="bsegg" /><BsPencilFill className="pencil" /></h3>
                     {auth.currentUser ?
                         <Link to="/profile" className="nav">
                             <BiUser />
